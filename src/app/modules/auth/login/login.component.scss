@@ -1,0 +1,134 @@
+.main-content {
+  width: 100%;
+  height: 100%;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.sub-content {
+  width: 80%;
+  border-radius: 10px;
+  background-color: antiquewhite;
+  border-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.login {
+  width: 83%;
+  border-radius: 20px;
+  // background-color: rgb(211, 22, 22);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgb(173, 144, 221);
+  background: linear-gradient(
+    90deg,
+    rgba(173, 144, 221, 1) 10%,
+    rgba(50, 171, 190, 1) 72%,
+    rgba(212, 174, 121, 1) 100%
+  );
+}
+.login-fields {
+  // width: 50%;
+  // background: linear-gradient(
+  //   0deg,
+  //   rgba(238, 212, 158, 1) 14%,
+  //   rgba(82, 210, 187, 1) 37%
+  // );
+  // border-radius: 20px;
+  // padding: 40px;
+  // border: 1px solid rgba(255, 255, 255, 0.3);
+  // z-index: 1;
+  // box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+  // filter: blur(10px);
+  position: relative;
+  width: 50%;
+  background: none; /* Remove background from the main div */
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 1;
+  overflow: hidden; /* Ensure the pseudo-element stays within the bounds */
+}
+
+.login-fields::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(238, 212, 158, 1) 14%,
+    rgba(82, 210, 187, 1) 37%
+  );
+  border-radius: 20px;
+  z-index: -1; /* Ensure the pseudo-element is behind the content */
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+  filter: blur(10px);
+}
+
+.form-sec {
+  display: flex;
+  flex-direction: column;
+}
+.form-text {
+  display: flex;
+  justify-content: space-between;
+}
+.third-sec {
+  display: flex;
+  flex-direction: column;
+  /* padding: 10px; */
+  padding-top: 22px;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.first-sec {
+  padding-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.login-text {
+  font-size: 23px;
+  font-weight: 700;
+}
+.second-sec {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.text-sec {
+  width: 50%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.header-text {
+  font-size: 26px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 5px 5px 10px black;
+  color: white;
+}
+.para-text {
+  padding-left: 15px;
+  text-align: center;
+  padding-right: 15px;
+  text-shadow: 5px 5px 10px black;
+  color: white;
+}
+
+::ng-deep .mat-mdc-form-field-icon-suffix,
+[dir="rtl"] .mat-mdc-form-field-icon-prefix {
+  padding-right: 4px !important;
+}
