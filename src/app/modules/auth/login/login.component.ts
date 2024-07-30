@@ -8,32 +8,16 @@ import { Validators } from '@angular/forms';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
-  // formGroup!: FormGroup;
-
-  // profileForm = new FormGroup({
-  //   username: new FormControl(''),
-  //   password: new FormControl(''),
-  // });
   constructor(private formBuilder: FormBuilder) {}
 
   profileForm = this.formBuilder.group({
-    username: ['', Validators.required],
-    password: [''],
+    username: ['', Validators.required, Validators.email],
+    password: ['', Validators.required],
   });
 
-  ngOnInit() {
-    // ...
-    console.log('oninitd cal');
-  }
+  ngOnInit() {}
 
   onSubmit() {
     console.log('hello');
-
-    // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm.value);
-  }
-
-  btnClicked() {
-    console.log('pppp');
   }
 }
