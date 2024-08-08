@@ -1,0 +1,56 @@
+.main-register {
+  width: 100%;
+  height: 100%;
+  background: antiquewhite;
+  display: flex;
+  flex-direction: row;
+}
+.background-img-sec {
+  width: 50%;
+  background-image: url("../../../../assets/images/background.jpg");
+  background-size: cover;
+}
+.register-sec {
+  width: 50%;
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-dt {
+  background-color: rgb(225, 255, 0);
+  padding: 30px;
+}
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+::ng-deep
+  .mat-mdc-text-field-wrapper.mdc-text-field--outlined
+  .mat-mdc-form-field-infix {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+::ng-deep .mat-mdc-form-field-infix {
+  min-height: 45px !important;
+}
+::ng-deep .mdc-floating-label {
+  padding-bottom: 10px;
+}
+.submit-btn {
+  width: 100%;
+  background: green !important;
+  color: white !important;
+}
+.header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
