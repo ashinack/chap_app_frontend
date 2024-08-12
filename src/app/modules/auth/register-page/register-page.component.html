@@ -7,54 +7,53 @@
       </div>
       <form [formGroup]="profileForm" class="form-input">
         <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Username</mat-label>
+          <mat-label>Name</mat-label>
           <input
             matInput
-            placeholder="Username"
-            formControlName="username"
+            placeholder="Name"
+            formControlName="name"
             required=""
           />
-          <span class="material-symbols-outlined" matSuffix> person </span>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Username</mat-label>
+          <mat-label>Email</mat-label>
           <input
             matInput
-            placeholder="Username"
-            formControlName="username"
+            placeholder="Email"
+            formControlName="email"
             required=""
           />
-          <span class="material-symbols-outlined" matSuffix> person </span>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Username</mat-label>
+          <mat-label>Mobile Number</mat-label>
           <input
             matInput
-            placeholder="Username"
-            formControlName="username"
+            placeholder="Mobile Number"
+            formControlName="mobileNO"
             required=""
           />
-          <span class="material-symbols-outlined" matSuffix> person </span>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Username</mat-label>
+          <mat-label>Password</mat-label>
           <input
             matInput
-            placeholder="Username"
-            formControlName="username"
+            placeholder="Password"
+            formControlName="password"
             required=""
           />
-          <span class="material-symbols-outlined" matSuffix> person </span>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Username</mat-label>
+          <mat-label>Confirm Password</mat-label>
           <input
             matInput
-            placeholder="Username"
-            formControlName="username"
+            placeholder="Confirm Password"
+            formControlName="confirmPassword"
             required=""
           />
-          <span class="material-symbols-outlined" matSuffix> person </span>
+          <mat-hint
+            *ngIf="profileForm.get('confirmPassword')?.errors?.['confirmPasswordValidator']"
+            >Password doesn't match</mat-hint
+          >
         </mat-form-field>
         <div class="btn">
           <button mat-raised-button class="submit-btn">Register</button>

@@ -18,7 +18,10 @@
   justify-content: center;
 }
 .form-dt {
-  background-color: rgb(225, 255, 0);
+  // background-color: rgb(225, 255, 0);
+  background: rgba(64, 255, 140, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
   padding: 30px;
 }
 .form-input {
@@ -43,6 +46,7 @@
   width: 100%;
   background: green !important;
   color: white !important;
+  border-radius: 17px !important;
 }
 .header {
   padding-top: 10px;
@@ -53,4 +57,8 @@
 .btn {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+:host ::ng-deep .mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-shape: 28px;
 }
