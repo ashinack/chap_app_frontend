@@ -23,7 +23,11 @@
             formControlName="email"
             required=""
           />
+          <mat-hint *ngIf="profileForm.get('email')?.hasError('email')"
+            >Invalid Email</mat-hint
+          >
         </mat-form-field>
+
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Mobile Number</mat-label>
           <input
@@ -32,6 +36,9 @@
             formControlName="mobileNO"
             required=""
           />
+          <mat-hint *ngIf="profileForm.get('mobileNO')?.hasError('pattern')"
+            >Invalid Mobile Number</mat-hint
+          >
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Password</mat-label>
@@ -41,6 +48,44 @@
             formControlName="password"
             required=""
           />
+          <!-- <mat-hint *ngIf="profileForm.get('password')?.hasError('pattern')"
+            >Password must be at least 8 characters long.</mat-hint
+          > -->
+          <mat-hint
+            *ngIf="
+              profileForm.get('password')?.dirty &&
+              !profileForm.get('password')?.value?.match('^(?=.*[A-Z])')
+            "
+            >>At least oneu ppercase</mat-hint
+          >
+          <mat-hint
+            *ngIf="
+              profileForm.get('password')?.dirty &&
+              !profileForm.get('password')?.value?.match('(?=.*[!@#$%^&*])')
+            "
+            >>At least one special character</mat-hint
+          >
+          <mat-hint
+            *ngIf="
+              profileForm.get('password')?.dirty &&
+              !profileForm.get('password')?.value?.match('(.*[0-9].*)')
+            "
+            >>At least one number</mat-hint
+          >
+          <mat-hint
+            *ngIf="
+              profileForm.get('password')?.dirty &&
+              !profileForm.get('password')?.value?.match('(?=.*[a-z])')
+            "
+            >>At least one lowercase</mat-hint
+          >
+          <mat-hint
+            *ngIf="
+              profileForm.get('password')?.dirty &&
+              !profileForm.get('password')?.value?.match('.{8,}')
+            "
+            >At least one lowercase</mat-hint
+          >
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Confirm Password</mat-label>

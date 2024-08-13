@@ -13,9 +13,25 @@ export class RegisterPageComponent {
   profileForm = this.formBuilder.group(
     {
       name: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
-      mobileNO: ['', Validators.required],
-      password: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      mobileNO: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(
+            '(([+][(]?[0-9]{1,3}[)]?)|([(]?[0-9]{4}[)]?))s*[)]?[-s.]?[(]?[0-9]{1,3}[)]?([-s.]?[0-9]{3})([-s.]?[0-9]{3,4})'
+          ),
+        ]),
+      ],
+      password: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(
+            '^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z\\d!@#$%^&*]{8,}$'
+          ),
+        ]),
+      ],
       confirmPassword: ['', Validators.required],
     },
     {
