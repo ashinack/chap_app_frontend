@@ -48,44 +48,21 @@
             formControlName="password"
             required=""
           />
-          <!-- <mat-hint *ngIf="profileForm.get('password')?.hasError('pattern')"
-            >Password must be at least 8 characters long.</mat-hint
-          > -->
-          <mat-hint
-            *ngIf="
-              profileForm.get('password')?.dirty &&
-              !profileForm.get('password')?.value?.match('^(?=.*[A-Z])')
-            "
-            >>At least oneu ppercase</mat-hint
+          <mat-icon
+            matSuffix
+            *ngIf="showPassword == false"
+            (click)="showPasswordBtn()"
+            >visibility</mat-icon
           >
-          <mat-hint
-            *ngIf="
-              profileForm.get('password')?.dirty &&
-              !profileForm.get('password')?.value?.match('(?=.*[!@#$%^&*])')
-            "
-            >>At least one special character</mat-hint
+          <mat-icon *ngIf="showPassword == true" matSuffix
+            >visibility_off</mat-icon
           >
+
           <mat-hint
-            *ngIf="
-              profileForm.get('password')?.dirty &&
-              !profileForm.get('password')?.value?.match('(.*[0-9].*)')
-            "
-            >>At least one number</mat-hint
+            *ngIf="profileForm.get('password')?.dirty && getPasswordError()"
           >
-          <mat-hint
-            *ngIf="
-              profileForm.get('password')?.dirty &&
-              !profileForm.get('password')?.value?.match('(?=.*[a-z])')
-            "
-            >>At least one lowercase</mat-hint
-          >
-          <mat-hint
-            *ngIf="
-              profileForm.get('password')?.dirty &&
-              !profileForm.get('password')?.value?.match('.{8,}')
-            "
-            >At least one lowercase</mat-hint
-          >
+            {{ getPasswordError() }}
+          </mat-hint>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Confirm Password</mat-label>
@@ -95,6 +72,8 @@
             formControlName="confirmPassword"
             required=""
           />
+          <mat-icon matSuffix>visibility</mat-icon>
+          <mat-icon matSuffix>visibility_off</mat-icon>
           <mat-hint
             *ngIf="profileForm.get('confirmPassword')?.errors?.['confirmPasswordValidator']"
             >Password doesn't match</mat-hint
