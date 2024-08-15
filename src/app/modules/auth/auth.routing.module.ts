@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
+import { OtpPageComponent } from './otp-page/otp-page.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterPageComponent,
+  },
+  {
+    path: 'otp',
+    component: OtpPageComponent,
   },
 ];
 

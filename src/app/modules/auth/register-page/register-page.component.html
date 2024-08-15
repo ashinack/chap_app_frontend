@@ -5,7 +5,11 @@
       <div class="header">
         <h1>Register Form</h1>
       </div>
-      <form [formGroup]="profileForm" class="form-input">
+      <form
+        [formGroup]="profileForm"
+        (ngSubmit)="onSubmit(profileForm.value)"
+        class="form-input"
+      >
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Name</mat-label>
           <input
@@ -44,20 +48,14 @@
           <mat-label>Password</mat-label>
           <input
             matInput
+            [type]="hide ? 'password' : 'text'"
             placeholder="Password"
             formControlName="password"
             required=""
           />
-          <mat-icon
-            matSuffix
-            *ngIf="showPassword == false"
-            (click)="showPasswordBtn()"
-            >visibility</mat-icon
-          >
-          <mat-icon *ngIf="showPassword == true" matSuffix
-            >visibility_off</mat-icon
-          >
-
+          <mat-icon matSuffix (click)="hide = !hide">{{
+            hide ? "visibility_off" : "visibility"
+          }}</mat-icon>
           <mat-hint
             *ngIf="profileForm.get('password')?.dirty && getPasswordError()"
           >
@@ -68,19 +66,28 @@
           <mat-label>Confirm Password</mat-label>
           <input
             matInput
+            [type]="hide ? 'password' : 'text'"
             placeholder="Confirm Password"
             formControlName="confirmPassword"
             required=""
           />
-          <mat-icon matSuffix>visibility</mat-icon>
-          <mat-icon matSuffix>visibility_off</mat-icon>
+          <mat-icon matSuffix (click)="hide = !hide">{{
+            hide ? "visibility_off" : "visibility"
+          }}</mat-icon>
           <mat-hint
             *ngIf="profileForm.get('confirmPassword')?.errors?.['confirmPasswordValidator']"
             >Password doesn't match</mat-hint
           >
         </mat-form-field>
         <div class="btn">
-          <button mat-raised-button class="submit-btn">Register</button>
+          <button
+            type="submit"
+            mat-raised-button
+            class="submit-btn"
+            [disabled]="!profileForm.valid"
+          >
+            Register
+          </button>
         </div>
       </form>
     </div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-register-page',
@@ -8,10 +9,12 @@ import { Router } from '@angular/router';
   styleUrl: './register-page.component.scss',
 })
 export class RegisterPageComponent {
-  showPassword = false;
-  constructor(private formBuilder: FormBuilder, private router: Router) {
-    console.log(this.showPassword, 'show--');
-  }
+  hide = true;
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private auth: AuthService
+  ) {}
 
   profileForm = this.formBuilder.group(
     {
@@ -86,7 +89,22 @@ export class RegisterPageComponent {
     return null; // No errors, all validations passed
   }
 
-  showPasswordBtn() {
-    this.showPassword = true;
+  onSubmit(user: any) {
+    this.auth
+      .registerUser({
+        name: user.name,
+        email: user.email,
+        mobile: user.mobileNO,
+        password: user.password,
+      })
+      .subscribe(
+        (data) => {
+          console.log(data, 'data');
+          this.router.navigate(['/auth/otp']);
+        },
+        (error) => {
+          console.log(error, 'erro');
+        }
+      );
   }
 }
