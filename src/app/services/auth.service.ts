@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -7,6 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   private url = 'http://localhost:3000';
+  headers = new HttpHeaders()
+    .set('content-type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*');
   constructor(private http: HttpClient) {}
 
   registerUser(obj: any): Observable<any> {
@@ -14,6 +17,9 @@ export class AuthService {
   }
 
   verifyOtp(obj: any): Observable<any> {
-    return this.http.post(this.url + '/auth/verifyOtp', obj);
+    return this.http.post(this.url + '/auth/verifyOtp', obj, {
+      headers: this.headers,
+      withCredentials: true,
+    });
   }
 }
