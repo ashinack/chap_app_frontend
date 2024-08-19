@@ -100,6 +100,7 @@ export class RegisterPageComponent {
       .subscribe(
         (data) => {
           console.log(data, 'data');
+          console.log(document.cookie, 'cookie');
           this.router.navigate(['/auth/otp']);
         },
         (error) => {

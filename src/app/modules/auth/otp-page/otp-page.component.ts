@@ -39,15 +39,17 @@ export class OtpPageComponent {
   }
 
   onSubmit(data: any) {
-    console.log(data);
+    console.log(data, 'data');
+    let otpGet = data.input1 + data.input2 + data.input3 + data.input4;
+    console.log(otpGet, 'kl');
 
     this.auth
       .verifyOtp({
-        otp: '088102',
+        otp: otpGet,
       })
       .subscribe(
         (data) => {
-          console.log(data, 'data');
+          this.router.navigate(['/chat/home']);
         },
         (error) => {
           console.log(error, 'erro');

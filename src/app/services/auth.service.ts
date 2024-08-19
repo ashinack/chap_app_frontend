@@ -13,7 +13,9 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   registerUser(obj: any): Observable<any> {
-    return this.http.post(this.url + '/auth/addUser', obj);
+    return this.http.post(this.url + '/auth/addUser', obj, {
+      withCredentials: true,
+    });
   }
 
   verifyOtp(obj: any): Observable<any> {
