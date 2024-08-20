@@ -1,4 +1,25 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer mode="side" opened>Drawer content</mat-drawer>
-  <mat-drawer-content>Main content</mat-drawer-content>
+  <mat-drawer mode="side" opened>
+    <div class="heading-sec">
+      <div class="main-head">
+        <span class="material-symbols-outlined" style="font-size: 25px">
+          chat
+        </span>
+        <span style="font-size: 15px; font-weight: 500">Heading</span>
+      </div>
+
+      <span class="material-symbols-outlined"> bottom_drawer </span>
+    </div>
+    <div class="menu-list-sec">
+      <div class="menu-list" *ngFor="let item of menuList; index as i">
+        <span class="material-symbols-outlined" style="font-size: 25px">{{
+          item.icon
+        }}</span>
+        <span style="font-size: 15px; font-weight: 500">{{ item.name }}</span>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div>Main content</div>
+  </mat-drawer-content>
 </mat-drawer-container>
