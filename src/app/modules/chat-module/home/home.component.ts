@@ -13,4 +13,10 @@ export class HomeComponent {
     { name: 'Calender', icon: 'calendar_month' },
     { name: 'Friend', icon: 'diversity_3' },
   ];
+  hoveredMenu: any = null;
+  selectedMenu: any = null;
+
+  selectMenu(menu: any) {
+    this.selectedMenu = menu;
+  }
 }

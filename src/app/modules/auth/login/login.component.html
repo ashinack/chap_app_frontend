@@ -19,11 +19,6 @@
             <span>Sign in to your account</span>
           </div>
           <div class="second-sec">
-            <!-- <form
-            class="example-form form-sec"
-            [formGroup]="profileForm"
-            (ngSubmit)="onSubmit()"
-          > -->
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Username</mat-label>
               <input
@@ -51,9 +46,9 @@
               <mat-error *ngIf="profileForm.get('password')?.touched"
                 >Password is required</mat-error
               >
-              <!-- <mat-hint>Hint</mat-hint> -->
+              <mat-hint>Hint</mat-hint>
             </mat-form-field>
-            <!-- </form> -->
+
             <div class="form-text">
               <span>Remember me</span>
               <span>Forgot Password ?</span>

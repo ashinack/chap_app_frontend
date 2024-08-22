@@ -11,15 +11,42 @@
       <span class="material-symbols-outlined"> bottom_drawer </span>
     </div>
     <div class="menu-list-sec">
-      <div class="menu-list" *ngFor="let item of menuList; index as i">
+      <div
+        class="menu-list"
+        *ngFor="let item of menuList; index as i"
+        [class.active]="selectedMenu === item"
+        (click)="selectMenu(item)"
+        (mouseover)="hoveredMenu = item"
+        (mouseleave)="hoveredMenu = null"
+      >
         <span class="material-symbols-outlined" style="font-size: 25px">{{
           item.icon
         }}</span>
         <span style="font-size: 15px; font-weight: 500">{{ item.name }}</span>
       </div>
     </div>
+    <div class="user-info-sec">
+      <div class="user-image"></div>
+      <div class="info-sec">
+        <span style="font-weight: 500">{{ "Ashina ck" }}</span>
+        <span style="font-weight: 300; font-size: 10px">{{
+          "ashina@gmail.com"
+        }}</span>
+      </div>
+    </div>
+    <div class="theme-sec">
+      <div class="light-theme">
+        <span class="material-symbols-outlined"> light_mode </span>
+        light
+        <span></span>
+      </div>
+      <div class="dark-theme">
+        <span class="material-symbols-outlined"> dark_mode </span>
+        <span>Dark </span>
+      </div>
+    </div>
   </mat-drawer>
   <mat-drawer-content>
-    <div>Main content</div>
+    <div class="contect-page">Main content</div>
   </mat-drawer-content>
 </mat-drawer-container>

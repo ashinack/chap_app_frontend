@@ -1,19 +1,32 @@
+::ng-deep.mat-drawer-container {
+  height: 100% !important;
+}
+::ng-deep.mat-drawer-inner-container {
+  position: relative;
+}
 ::ng-deep.mat-drawer {
   width: 240px !important;
+  background-color: #141718 !important;
+  color: white !important;
+}
+::ng-deep.cdk-visually-hidden .cdk-focus-trap-anchor {
+  height: 100% !important;
+  color: white !important;
 }
 
 ::ng-deep.mat-drawer-content {
-  height: 45rem !important;
-  background-color: aquamarine;
+  background: #141718;
+  padding: 20px;
+  height: 100% !important;
 }
 .heading-sec {
   padding: 15px;
   display: flex;
-  /* padding-left: 5px; */
   justify-content: space-between;
   align-items: center;
   padding-left: 15px;
   padding-right: 15px;
+  padding-top: 30px;
 }
 .main-head {
   display: flex;
@@ -26,6 +39,87 @@
 .menu-list {
   display: flex;
   align-items: center;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0px 10px 10px;
   gap: 18px;
+}
+.contect-page {
+  height: 95%;
+  background: #232627;
+  border-radius: 20px;
+  color: white !important;
+}
+.menu-list:hover {
+  background-color: #a39d9d29;
+  border-radius: 10px;
+}
+
+.menu-list.active {
+  background-color: #a39d9d29;
+  border-radius: 10px;
+}
+.menu-list.active:hover {
+  background-color: #a39d9d29;
+  border-radius: 10px;
+}
+.user-info-sec {
+  background: #232627;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: absolute;
+  bottom: 75px;
+  width: 83%;
+}
+.user-image {
+  width: 26px;
+  height: 24px;
+  padding: 10px;
+  border-radius: 50%;
+  background-image: url("../../../../assets/images/profile.jpg");
+  background-size: cover;
+}
+.info-sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.theme-sec {
+  margin-top: 10px;
+  background: #232627;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  position: absolute;
+  bottom: 22px;
+  width: 88%;
+}
+.light-theme {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #141718;
+  border-radius: 10px;
+  padding: 5px 8px 5px 8px;
+  justify-content: center;
+}
+.dark-theme {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #232627;
+  border-radius: 10px;
+  padding: 5px 8px 5px 8px;
+  justify-content: center;
 }
