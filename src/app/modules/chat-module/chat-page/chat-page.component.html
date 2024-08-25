@@ -1,1 +1,25 @@
-<p>chat-page works!</p>
+<div class="chat-page">
+  <div class="chat-list">
+    <div class="heading">
+      <span>heading</span>
+      <span>Icon</span>
+    </div>
+    <div class="search-box">
+      <span>Search</span>
+      <span class="material-symbols-outlined"> search </span>
+    </div>
+    <div class="chat-persons-list">
+      <div class="each-sec" *ngFor="let items of chatList">
+        <div class="first-sec">
+          <div class="profile-image"></div>
+          <div class="name-sec">
+            <span style="font-weight: 600">name</span> <span>sub name</span>
+          </div>
+        </div>
+
+        <div class="time"><span style="font-weight: 600">11:23</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="chat-specific">specific</div>
+</div>
