@@ -20,6 +20,7 @@
 }
 .heading {
   display: flex;
+  flex-wrap: wrap;
   padding: 10px 0px 10px 0px;
   color: white;
   justify-content: space-between;
@@ -29,6 +30,7 @@
   border-radius: 10px;
   padding: 7px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   color: white;
@@ -117,4 +119,53 @@
   .chat-specific {
     width: auto;
   }
+}
+.specific-chat-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding: 13px 0px 13px 0px;
+}
+.specific-profile-sec {
+  display: flex;
+  gap: 10px;
+}
+.specific-image {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: azure;
+}
+.actions-sections {
+  display: flex;
+  gap: 10px;
+}
+.message-sec {
+  margin-top: 24px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  height: 80%;
+  position: relative;
+}
+.message-post-sec {
+  display: flex;
+  width: calc(100% - 20px);
+  position: absolute;
+  bottom: 10px;
+  background: aliceblue;
+  justify-content: space-between;
+  padding: 5px 0px 5px 0px;
+  gap: 10px;
+}
+.typing-sec {
+  width: 80%;
+  background: aqua;
+  padding: 10px;
+}
+
+.message-btn {
+  width: 20%;
+  background: aquamarine;
 }
