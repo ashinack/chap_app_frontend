@@ -30,4 +30,16 @@ export class HomeComponent {
     this.selectedMenu = menu;
     this.router.navigate([menu.url]);
   }
+
+  get lightTheme(): boolean {
+    return document.documentElement.getAttribute('theme') === 'light';
+  }
+
+  toggle() {
+    if (this.lightTheme) {
+      document.documentElement.setAttribute('theme', 'null');
+    } else {
+      document.documentElement.setAttribute('theme', 'light');
+    }
+  }
 }

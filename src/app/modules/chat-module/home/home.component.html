@@ -25,6 +25,17 @@
         <span style="font-size: 15px; font-weight: 500">{{ item.name }}</span>
       </div>
     </div>
+    <div>
+      <div>
+        Dark Mode
+        <mat-slide-toggle
+          color="primary"
+          [checked]="lightTheme"
+          (change)="toggle()"
+        ></mat-slide-toggle>
+        Light Mode
+      </div>
+    </div>
     <div class="user-info-sec">
       <div class="user-image"></div>
       <div class="info-sec">
